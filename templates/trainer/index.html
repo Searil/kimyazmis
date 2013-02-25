@@ -1,0 +1,67 @@
+{% load static %}
+{% include "headtag.html" %}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Trainer Page</h1>
+        <div class="post-seperator"></div>
+        <form method="POST" id="" action="/trainer/data">
+          {% csrf_token %}
+          <dl class="field row three columns"
+              style="padding: 20 0px;">
+	    <dt class="text">
+              <input type="text" name="yazar_adi" id="yazar_adi_id"
+              placeholder="Yazar Adı" />
+            </dt>
+          </dl>
+          <dl class="row twelve columns">
+            <p>Asagidaki alanlara yazarin 5 adet kose yazisini giriniz. </p>
+          </dl>
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+	    <dt class="text">
+              <textarea name="yazi1_name" id="yazi1" rows="" cols="" tabindex=""></textarea>
+            </dt>
+          </dl>
+
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+	    <dt class="text">
+              <textarea name="yazi2_name" id="yazi2" rows="" cols="" tabindex=""></textarea>
+            </dt>
+          </dl>
+
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+	    <dt class="text">
+              <textarea name="yazi3_name" id="yazi3" rows="" cols="" tabindex=""></textarea>
+            </dt>
+          </dl>
+
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+	    <dt class="text">
+              <textarea name="yazi4_name" id="yazi4" rows="" cols="" tabindex=""></textarea>
+            </dt>
+          </dl>
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+	    <dt class="text">
+              <textarea name="yazi5_name" id="yazi5" rows="" cols="" tabindex=""></textarea>
+            </dt>
+          </dl>
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+            <input type="submit" name="hede" value="Submit" />
+          </dl>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
+  <br /><br /><br />
+</body>

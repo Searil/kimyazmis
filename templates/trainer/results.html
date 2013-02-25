@@ -1,0 +1,64 @@
+{% load static %}
+{% include "headtag.html" %}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Trainer Page</h1>
+        <div class="post-seperator"></div>
+        <h2>Yazar [{{ yazar }}] icin olusturulan sonuclar; </h2>
+        <br />
+        <table width="" cellspacing="" cellpadding="" border="">
+          <tr>
+            <td> Avg Exclamation Mark <h2 style="display:inline;">[!]</h2> </td>
+            <td> {{ exclamation }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Normalized Exclamation Mark <h2 style="display:inline;">[! (n)]</h2> </td>
+            <td> {{ exclamation_n }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Question Mark <h2 style="display:inline;">[?]</h2> </td>
+            <td> {{ question_mark }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Normalized Question Mark <h2 style="display:inline;">[? (n)]</h2> </td>
+            <td> {{ question_mark_n }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Coma <h2 style="display:inline;">[,]</h2> </td>
+            <td> {{ coma }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Normalized Coma <h2 style="display:inline;">[, (n)]</h2> </td>
+            <td> {{ coma_n }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Dash <h2 style="display:inline;">[-]</h2> </td>
+            <td> {{ yan_cizgi }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Normalized Dash <h2 style="display:inline;">[- (n)]</h2> </td>
+            <td> {{ yan_cizgi_n }} </td>
+          </tr>
+
+          <tr>
+            <td> Avg Paragraph Length <h2 style="display:inline;">[.....]</h2> </td>
+            <td> {{ paragraph_len }} </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <br /><br /><br />
+</body>
