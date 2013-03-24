@@ -1,0 +1,54 @@
+{% load static %}
+{% include "headtag.html" %}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Results</h1>
+        <div class="post-seperator"></div>
+        <h2> Biz yazarin <span style="color: maroon;"> {{ total }} </span>
+          olduguna inaniyoruz. <br />
+          Algoritmalarimiz soyle inanmis;
+        </h2>
+        <table width="" cellspacing="" cellpadding="" border="">
+          <tr>
+            <td> K-Nearest Neighboor Classifier </td>
+            <td> {{ knn }} </td>
+          </tr>
+
+          <tr>
+            <td> Support Vector Classifier </td>
+            <td> {{ svc }} </td>
+          </tr>
+
+          <tr>
+            <td> Logistic Regression </td>
+            <td> {{ logistic }} </td>
+          </tr>
+
+          <tr>
+            <td> Gaussian Naive Bayes </td>
+            <td> {{ gnb }} </td>
+          </tr>
+
+          <tr>
+            <td> Decision Tree Classifier </td>
+            <td> {{ dtc }} </td>
+          </tr>
+
+          <tr>
+            <td> Gradient Boosting Classifier </td>
+            <td> {{ gbc }} </td>
+          </tr>
+
+
+        </table>
+        <a href="/predict"> Yeni Test Yap </a>
+        <div class="post-seperator"></div>
+      </div>
+    </div>
+  </div>
+
+  <br /><br /><br />
+</body>

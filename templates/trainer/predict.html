@@ -1,0 +1,34 @@
+{% load static %}
+{% include "headtag.html" %}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Prediction Page</h1>
+        <div class="post-seperator"></div>
+        <form method="POST" id="" action="/result">
+          {% csrf_token %}
+          <dl class="row twelve columns">
+            <p>Asagidaki alana yazarin 1 adet kose yazisini giriniz.
+              Biz de tahmin etmeye calisalim.
+            </p>
+          </dl>
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+	    <dt class="text">
+              <textarea name="yazi1_name" id="yazi1" rows="" cols="" tabindex=""></textarea>
+            </dt>
+          </dl>
+
+          <dl class="field row ten columns" style="margin: 10 0px;">
+            <input type="submit" name="hede" value="Submit" />
+          </dl>
+
+
+      </div>
+    </div>
+  </div>
+
+  <br /><br /><br />
+</body>
