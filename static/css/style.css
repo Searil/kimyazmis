@@ -213,3 +213,7 @@ i {
     border: 1px dotted rgba(0,0,0,0.4);
     /* margin-bottom: 20px; */
 }
+
+.low-text {
+    font-size: 0.6em;
+}
