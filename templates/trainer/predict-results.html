@@ -44,11 +44,168 @@
 
 
         </table>
-        <a href="/predict"> Yeni Test Yap </a>
-        <div class="post-seperator"></div>
       </div>
     </div>
-  </div>
 
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Algorithm Scores</h1>
+        <div class="post-seperator"></div>
+        <canvas id="myChart" width="900" height="400"></canvas>
+        <br />
+      </div>
+
+      <div class="push_two four columns">
+        Gray Color (5 Authors) <br />
+        Test Data: 25 (5 per author)<br />
+        Train Data: 175 (35 per author) <br />
+        <br />
+      </div>
+
+      <div class="four columns">
+        Blue Color (10 Authors) <br />
+        Test Data: 50 (5 per author)<br />
+        Train Data: 350 (35 per author) <br />
+        <br /><br />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="twelve columns">
+        <canvas id="myChart2" width="900" height="400"></canvas>
+        <br />
+      </div>
+
+      <div class="push_two four columns">
+        Gray Color (15 Authors) <br />
+        Test Data: 75 (5 per author)<br />
+        Train Data: 525 (35 per author) <br />
+        <br />
+      </div>
+
+      <div class="four columns">
+        Blue Color (20 Authors) <br />
+        Test Data: 100 (5 per author)<br />
+        Train Data: 700 (35 per author) <br />
+        <br /><br />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Algorithm Options</h1>
+        <div class="post-seperator"></div>
+        <h2> Algoritmalarin calistirilma parametreleri. <br />
+        </h2>
+        <table width="" cellspacing="" cellpadding="" border="">
+          <tr>
+            <td> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier">
+                K-Nearest Neighboor Classifier
+              </a></td>
+            <td class="low-text"> n_neighbors=3, weights='uniform', algorithm='auto',
+              leaf_size=30, warn_on_equidistant=True, p=2 </td>
+          </tr>
+
+          <tr>
+            <td> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">
+                Support Vector Classifier</a> </td>
+            <td class="low-text"> C=1.0, kernel='linear', degree=3,
+              gamma=0.0, coef0=0.0, shrinking=True, probability=False,
+              tol=0.001, cache_size=200, class_weight=None,
+              verbose=False, max_iter=-1 </td>
+          </tr>
+
+          <tr>
+            <td> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression">Logistic Regression</a> </td>
+            <td class="low-text"> C=100000.0, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, penalty='l2',
+          random_state=None, tol=0.0001</td>
+          </tr>
+
+          <tr>
+            <td> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB">
+            Gaussian Naive Bayes </a> </td>
+            <td class="low-text"> GNB takes no parameters. </td>
+          </tr>
+
+          <tr>
+            <td> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier">Decision Tree Classifier</a> </td>
+            <td class="low-text"> criterion='gini', max_depth=None,
+            min_samples_split=2, min_samples_leaf=1, min_density=0.1,
+            max_features=None, compute_importances=False,
+            random_state=None </td>
+          </tr>
+
+          <tr>
+            <td> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html#sklearn.ensemble.GradientBoostingClassifier">Gradient Boosting Classifier </a></td>
+            <td class="low-text"> loss='deviance', learning_rate=0.1, n_estimators=100, subsample=1.0, min_samples_split=2, min_samples_leaf=1, max_depth=3, init=None, random_state=None, max_features=None, verbose=0, learn_rate=None </td>
+          </tr>
+
+
+        </table>
+        <a href="/predict"> Yeni Test Yap </a>
+        <div class="post-seperator"></div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <script type="text/javascript">
+
+    var data = {
+        labels : ["K-Nearest Neighboor", "SVM Classifier", "Logistic Regression",
+                  "Naive Bayes", "Deceision Tree Classifier", "Gradient Boosting Classifier"],
+        datasets : [
+            {
+                // 10 authors
+                fillColor : "rgba(151,187,205,0.5)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                data : [ 85, 85, 93, 92, 80, 88 ]
+            },
+            {
+                // 5 authors
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : [ 92, 95, 95, 88, 88, 95 ]
+            }]
+    }
+
+    //Get the context of the canvas element we want to select
+    var ctx = document.getElementById("myChart").getContext("2d");
+    new Chart(ctx).Line(data);
+
+
+    var data2 = {
+        labels : ["K-Nearest Neighboor", "SVM Classifier", "Logistic Regression",
+                  "Naive Bayes", "Deceision Tree Classifier", "Gradient Boosting Classifier"],
+        datasets : [
+            {
+                // 20 authors
+                fillColor : "rgba(151,187,205,0.5)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                data : [ 60, 79, 79, 77, 65, 77 ]
+            },
+            {
+                // 15 authors
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : [ 69, 78, 80, 77, 68, 82 ]
+            }]
+    }
+
+    //Get the context of the canvas element we want to select
+    var ctx2 = document.getElementById("myChart2").getContext("2d");
+    new Chart(ctx2).Line(data2);
+
+  </script>
   <br /><br /><br />
 </body>
